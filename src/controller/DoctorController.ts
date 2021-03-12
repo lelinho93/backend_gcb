@@ -9,10 +9,10 @@ export class DoctorController {
         try {
 
             const name: string = req.body.name
-            const crm: number = req.body.crm
-            const phone: number = req.body.phone
-            const cellphone: number = req.body.cellphone
-            const cep: number = req.body.cellphone
+            const crm: string = req.body.crm
+            const phone: string = req.body.phone
+            const cellphone: string = req.body.cellphone
+            const cep: string = req.body.cellphone
             const specialty: string = req.body.specialty
 
         } catch (error) {

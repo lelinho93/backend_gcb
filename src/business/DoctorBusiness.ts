@@ -4,7 +4,7 @@ import { IdGenerator } from '../service/idGenerator'
 
 export class DoctorBusiness {
 
-    async create(name: string, crm: number, phone: number, cellphone: number, cep: number, specialty: string): Promise<void> {
+    async create(name: string, crm: string, phone: string, cellphone: string, cep: string, specialty: string): Promise<void> {
 
         try {
 
