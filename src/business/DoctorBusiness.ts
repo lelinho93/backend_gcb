@@ -24,9 +24,12 @@ export class DoctorBusiness {
             const idGenerator = new IdGenerator()
             const doctorDataBase = new DoctorDataBase()
 
+            const createdAt = new Date()
+
+
             const id = idGenerator.generate()
 
-            await doctorDataBase.create(id, name, crm, phone, cellphone, cep, specialty)
+            await doctorDataBase.create(createdAt, id, name, crm, phone, cellphone, cep, specialty)
 
             
         } catch (error) {

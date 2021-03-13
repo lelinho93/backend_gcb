@@ -5,10 +5,11 @@ export class DoctorDataBase extends BaseDataBase {
 
     private static TABLE_NAME = 'doctor'
 
-    async create(id: string, name: string, crm: string, phone: string, cellphone: string, cep: string, specialty: string){
+    async create(createdAt: Date,  id: string, name: string, crm: string, phone: string, cellphone: string, cep: string, specialty: string){
 
     try {
         await this.getConnection().insert({
+            createdAt,
             id,
             name,
             crm,
