@@ -4,7 +4,7 @@ import { IdGenerator } from '../service/idGenerator'
 
 export class DoctorBusiness {
 
-    async create(name: string, crm: string, phone: string, cellphone: string, cep: string, specialty: string): Promise<void> {
+    async create(name: string, crm: string, phone: string, cellphone: string, cep: string, publicPlace: string, complement: string, neighborhood: string, locality: string, uf: string, specialty: string): Promise<void> {
 
         try {
 
@@ -29,7 +29,7 @@ export class DoctorBusiness {
 
             const id = idGenerator.generate()
 
-            await doctorDataBase.create(createdAt, id, name, crm, phone, cellphone, cep, specialty)
+            await doctorDataBase.create(createdAt, id, name, crm, phone, cellphone, cep, publicPlace, complement, neighborhood, locality, uf, specialty)
 
             
         } catch (error) {

@@ -12,7 +12,7 @@ export class UpdateDoctorBusiness {
             await updateDoctorDataBase.create(crm, name, phone, cellphone, cep, specialty, updatedAt)
             
         } catch (error) {
-            
+            throw new Error(`Erro ao criar: ${error.message || error.sqlMessage}`)
         }
     }
 }
