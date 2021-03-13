@@ -1,4 +1,3 @@
-import { doctor } from '../model/Doctor'
 import { BaseDataBase } from './BaseDataBase'
 
 export class DoctorDataBase extends BaseDataBase {

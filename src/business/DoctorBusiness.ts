@@ -1,5 +1,4 @@
 import { DoctorDataBase } from '../data/DoctorDataBase';
-import { doctor } from '../model/Doctor'
 import { IdGenerator } from '../service/idGenerator'
 
 export class DoctorBusiness {
