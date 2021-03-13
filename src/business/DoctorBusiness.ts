@@ -8,12 +8,26 @@ export class DoctorBusiness {
 
         try {
 
+            if(!name || !crm || !cellphone || !cep || !specialty) {
+                throw new Error("Todos os campos devem estar devidamente preenchidos!")
+            }
+            if(crm.length < 7) {
+                throw new Error("O 'CRM' deve ter 7 dígitos.")
+            }
+            if(cep.length < 9) {
+                throw new Error("O CEP deve ter 9 dígitos.")
+            }
+            if(cellphone.length < 10){
+                throw new Error("O número de celular deve ter no mínimo 10 dígitos.")
+            }
+
             const idGenerator = new IdGenerator()
             const doctorDataBase = new DoctorDataBase()
 
             const id = idGenerator.generate()
 
             await doctorDataBase.create(id, name, crm, phone, cellphone, cep, specialty)
+
             
         } catch (error) {
             throw new Error(`Erro ao criar: ${error.message || error.sqlMessage}`)

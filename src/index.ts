@@ -2,6 +2,7 @@ import express from 'express'
 import knex from 'knex'
 import dotenv from 'dotenv'
 import { AddressInfo } from 'net'
+import { DoctorController } from './controller/DoctorController'
 
 dotenv.config()
 
@@ -29,7 +30,7 @@ app.use(express.json())
 
 /****************************ENDPOINTS HERE**************************************** */
 
-
+app.post('/doctor', new DoctorController().create)
 
 
 /********************************************************************************** */

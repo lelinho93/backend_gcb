@@ -1,4 +1,4 @@
-export enum Specialty {
+enum Specialty {
     ALERGOLOGIA = 'Alergologia',
     ANGIOLOGIA = 'Angiologia',
     BUCO_MAXILO = 'Buco Maxilo',
