@@ -12,9 +12,8 @@ export class SearchDoctorDataBase extends BaseDataBase {
             concat(name, crm, phone, cellphone, cep, publicPlace, complement, neighborhood, locality, uf, specialty)
             LIKE "%${search}%"
             `)  
-            console.log(result[0])
-            return result[0]
             
+            return result[0]           
             
             
         } catch (error) {

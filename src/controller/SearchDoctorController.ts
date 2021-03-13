@@ -10,8 +10,6 @@ export class SearchDoctorController {
 
             const search = req.query.search
 
-            console.log(search)
-
             const result = await searchDoctorBusiness.create(search as string)
 
             res.status(200).send(result)

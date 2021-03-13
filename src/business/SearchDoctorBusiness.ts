@@ -13,7 +13,11 @@ export class SearchDoctorBusiness {
 
             
             const result = await searchDoctorDataBase.create(search)
-            
+
+            if(!result[0]){
+                throw new Error('Nenhum usuário encontrado!')
+            }                      
+
             return result
             
             
