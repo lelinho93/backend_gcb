@@ -33,12 +33,4 @@ app.post('/doctor', new DoctorController_1.DoctorController().create);
 app.put('/doctor/update', new UpdateDoctorController_1.UpdateDoctorController().create);
 app.delete('/doctor/delete', new DeleteDoctorController_1.DeleteDoctorController().create);
 app.get('/doctor/search', new SearchDoctorController_1.SearchDoctorController().create);
-const server = app.listen(process.env.PORT || 3306, () => {
-    if (server) {
-        const address = server.address();
-        console.log(`Server is running in http://localhost:${address.port}`);
-    }
-    else {
-        console.log('Failure upon starting');
-    }
-});
+app.listen(process.env.PORT || 3306);
