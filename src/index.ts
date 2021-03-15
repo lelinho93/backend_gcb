@@ -39,12 +39,5 @@ app.delete('/doctor/delete', new DeleteDoctorController().create)
 app.get('/doctor/search', new SearchDoctorController().create)
 
 /********************************************************************************** */
-
-const server = app.listen(process.env.PORT || 3306, () => {
-    if(server) {
-        const address = server.address() as AddressInfo;
-        console.log(`Server is running in http://localhost:${address.port}`)
-    } else {
-        console.log('Failure upon starting')
-    }
-})
+app.listen(process.env.PORT || 3306)
+    
