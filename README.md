@@ -49,9 +49,10 @@ endereço> http://localhost:3306/doctor/update
 
 necessida de um body com a chave crm e valor válido com sete dígitos
 
-Nesse exemplo é atualizado somente o número de celular:
+Nesse exemplo é atualizado o nome e o número de celular:
 
 {
+   "crm":"7493295",
    "name":"Yoshiro Nagao",
    "cellphone":"11966554433"
 }
