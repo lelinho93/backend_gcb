@@ -69,4 +69,4 @@ endereço> http://localhost:3306/doctor/delete/
 
 necessita de uma query param com o número do CRM no padraão obrigatorio de sete dígitos.
 
-o endereço "http://localhost:3306" varia de acordo com o servidor que estiver rodando e complemtnado com os paths dos endpoints.
+o endereço "http://localhost:3306" varia de acordo com o servidor que estiver rodando e é completado com os paths dos endpoints.
