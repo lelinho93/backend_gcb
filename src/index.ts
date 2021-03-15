@@ -3,8 +3,9 @@ import knex from 'knex'
 import dotenv from 'dotenv'
 import { AddressInfo } from 'net'
 import { DoctorController } from './controller/DoctorController'
-import { UpdateDoctorBusiness } from './business/UpdateDoctorBusiness'
 import { UpdateDoctorController } from './controller/UpdateDoctorController'
+import { DeleteDoctorController } from './controller/DeleteDoctorController'
+import { SearchDoctorController } from './controller/SearchDoctorController'
 
 dotenv.config()
 
@@ -34,6 +35,8 @@ app.use(express.json())
 
 app.post('/doctor', new DoctorController().create)
 app.put('/doctor/update', new UpdateDoctorController().create)
+app.delete('/doctor/delete', new DeleteDoctorController().create)
+app.get('/doctor/search', new SearchDoctorController().create)
 
 /********************************************************************************** */
 

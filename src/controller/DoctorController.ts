@@ -1,5 +1,7 @@
 import { Request, Response } from 'express'
 import { DoctorBusiness } from '../business/DoctorBusiness'
+import { address } from '../model/Address'
+import { getAddressByCep } from '../service/AddressManager'
 
 export class DoctorController {
 
@@ -8,16 +10,28 @@ export class DoctorController {
 
         try {
 
+            const cep: string = req.body.cep
+
+            const getAddress: address = await getAddressByCep(cep.replace("-", ""))
+
+            if(!getAddress.publicPlace || !getAddress.locality || !getAddress.uf){
+                throw new Error("Cep incorreto!")
+            }
+
             const name: string = req.body.name
             const crm: string = req.body.crm
             const phone: string = req.body.phone
-            const cellphone: string = req.body.cellphone
-            const cep: string = req.body.cep
-            const specialty: string = req.body.specialty
+            const cellphone: string = req.body.cellphone            
+            const specialty: string = req.body.specialty 
+            const publicPlace = getAddress.publicPlace
+            const complement = getAddress.complement
+            const neighborhood = getAddress.neighborhood
+            const locality = getAddress.locality
+            const uf = getAddress.uf
 
-            await doctorBusiness.create(name, crm, phone, cellphone, cep, specialty)
+            await doctorBusiness.create(name, crm, phone, cellphone, cep, publicPlace, complement, neighborhood, locality, uf, specialty)
 
-            res.status(200).send("Profissional cadastrado com sucesso!")
+            res.status(200).send("Profissional cadastrado com sucesso!")            
 
         } catch (error) {
             res.status(400).send({message: error.message})
