@@ -8,7 +8,7 @@ export class DeleteDoctorController {
 
     try {
 
-        const crm: string = req.headers.crm as string
+        const crm: string = req.body.crm as string
                 
         await updateDoctorBusiness.create(crm)
 
